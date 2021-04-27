@@ -1,6 +1,6 @@
 <template>
   <div class="error">
-    <emty-state />
+    <emty-state title="Page" />
     <nuxt-link to="/"> Go home </nuxt-link>
   </div>
 </template>

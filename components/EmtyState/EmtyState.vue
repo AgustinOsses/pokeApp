@@ -7,12 +7,19 @@
         alt=""
       />
     </div>
-    <h2>Pokemon not found</h2>
+    <h2>{{ title }} not found</h2>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      tyoe: String,
+      default: 'Pokémon',
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
