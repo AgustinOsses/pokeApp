@@ -12,7 +12,7 @@
       class="btn-show-more"
       @click="showMore"
     >
-      Mostrar mas
+      Show more
     </button>
   </div>
 </template>
@@ -105,7 +105,7 @@ export default {
   width: 8rem;
   height: 3rem;
   border-radius: 10px;
-  background-color: #113b96;
+  background-color: #d5082d;
   color: white;
   margin: 2rem 0;
   font-size: 1.2rem;
@@ -113,5 +113,8 @@ export default {
   border: none;
   box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
   cursor: pointer;
+  &:hover {
+    background-color: #d34761;
+  }
 }
 </style>

@@ -6,9 +6,9 @@
       @keydown.enter="search"
       class="browser__input"
       type="text"
-      placeholder="Busca tu pokémon"
+      placeholder="Find your pokemon"
     />
-    <button class="browser__btn" @click="search">Consultar</button>
+    <button class="browser__btn" @click="search">Consult</button>
   </section>
 </template>
 
@@ -34,7 +34,13 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  // background: linear-gradient(to right, #76b852, #8dc26f);
+  background: linear-gradient(
+    to right,
+    hsl(203, 100%, 60%),
+    hsl(239, 47%, 80%)
+  );
+  // background: linear-gradient(to right, #e53935, #e35d5b);
   height: 70vh;
   width: 100%;
   &__title {
@@ -62,6 +68,9 @@ export default {
     border: none;
     box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
     cursor: pointer;
+    &:hover {
+      background-color: #d34761;
+    }
     @media screen and (min-width: 768px) {
       height: 4rem;
       width: 10rem;

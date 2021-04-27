@@ -24,11 +24,11 @@
         <span class="subtitle">Type</span>
       </div>
       <div class="card__weight-wrapper container">
-        <span class="card__weight">{{ pokemon.weight | prueba }}</span>
+        <span class="card__weight">{{ pokemon.weight }}</span>
         <span class="subtitle">Weight</span>
       </div>
       <div class="card__height-wrapper container">
-        <span class="card__height">{{ pokemon.height | height }}</span>
+        <span class="card__height">{{ pokemon.height }}</span>
         <span class="subtitle">Height</span>
       </div>
     </div>
@@ -55,14 +55,6 @@ export default {
       default: () => {},
     },
   },
-  // filters: {
-  //   prueba(value) {
-  //     return numeral(value).format('000,0')
-  //   },
-  //   height(value) {
-  //     return numeral(value).format('00.0.')
-  //   },
-  // },
 }
 </script>
 
