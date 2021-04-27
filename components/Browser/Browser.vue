@@ -8,7 +8,7 @@
       type="text"
       placeholder="Busca tu pokémon"
     />
-    <button @click="search" class="browser__btn">Consultar</button>
+    <button class="browser__btn" @click="search">Consultar</button>
   </section>
 </template>
 
@@ -34,7 +34,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #798897;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   height: 70vh;
   width: 100%;
   &__title {
@@ -60,6 +60,8 @@ export default {
     font-size: 1.2rem;
     outline: none;
     border: none;
+    box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
     @media screen and (min-width: 768px) {
       height: 4rem;
       width: 10rem;

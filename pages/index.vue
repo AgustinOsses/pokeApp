@@ -1,15 +1,19 @@
 <template>
   <div class="container">
-    <navbar />
     <browser @search-pokemon="getSearch" />
     <div class="card-wrapper">
       <div v-for="pokemon in pokemonList" :key="pokemon.id">
-        <nuxt-link :to="`/CardDetail/${pokemon.id}`">
-          <card :pokemon="pokemon"
-        /></nuxt-link>
+        <card :pokemon="pokemon" />
       </div>
-      <emty-state v-if="pokemonList.length == 0" />
+      <emty-state class="emty-state" v-if="pokemonList.length == 0" />
     </div>
+    <button
+      v-if="pokemonList.length > 1"
+      class="btn-show-more"
+      @click="showMore"
+    >
+      Mostrar mas
+    </button>
   </div>
 </template>
 
@@ -29,6 +33,19 @@ export default {
   },
 
   methods: {
+    showMore() {
+      axios
+        .get(`${env.endPoint}?limit=10&offset=${this.pokemonList.length}`)
+        .then((resolve) => {
+          let data = resolve.data.results
+          data.forEach((res) => {
+            axios
+              .get(res.url)
+              .then((response) => this.pokemonList.push(response.data))
+          })
+        })
+    },
+
     getSearch(value) {
       this.pokemonList = []
       if (value) {
@@ -49,9 +66,10 @@ export default {
       let api = await axios.get(`${env.endPoint}`)
       let data = api.data.results
       data.forEach((res) => {
-        axios
-          .get(res.url)
-          .then((response) => this.pokemonList.push(response.data))
+        axios.get(res.url).then((response) => {
+          this.pokemonList.push(response.data)
+          console.log(response.data)
+        })
       })
     },
   },
@@ -65,14 +83,35 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: #fefefe;
   width: 100%;
   @media screen and (min-width: 768px) {
     justify-content: space-around;
   }
+}
+.card {
+  text-decoration: none;
+}
+
+.emty-state {
+  margin: 5rem 0;
+}
+
+.btn-show-more {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: #113b96;
+  color: white;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
 }
 </style>

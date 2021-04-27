@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navbar />
     <Nuxt />
   </div>
 </template>
@@ -8,5 +9,6 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Roboto;
 }
 </style>

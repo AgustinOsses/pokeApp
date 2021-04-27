@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <pre>{{ pokemon }}</pre>
+  <div class="pokemon-detail">
+    <div>
+      <!-- <img :src="pokemon.sprites.other.dream_world.front_default" alt="" /> -->
+    </div>
+    <pre>{{ pokemon.name }}</pre>
   </div>
 </template>
 
@@ -16,9 +19,12 @@ export default {
   },
 
   async fetch() {
-    axios.get(`${pokeApi.endPoint}${this.$route.params.id}`).then((result) => {
-      this.pokemon = result.data
-    })
+    await axios
+      .get(`${pokeApi.endPoint}${this.$route.params.id}`)
+      .then((result) => {
+        this.pokemon = result.data
+      })
+    return this.pokemon
   },
 }
 </script>
