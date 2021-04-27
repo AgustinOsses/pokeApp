@@ -30,7 +30,8 @@ export default {
       this.$emit('search-pokemon', keyLower)
     },
     recharge() {
-      this.$emit('search-pokemon', '')
+      this.key = ''
+      this.$emit('search-pokemon', this.key)
     },
   },
 }

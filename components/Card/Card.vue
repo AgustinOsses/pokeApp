@@ -66,7 +66,7 @@ export default {
   width: 20rem;
   min-height: 33rem;
   height: 34rem;
-  margin: 1rem 0;
+  margin: 2rem 0;
   box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   background-color: #f3f3f3;
