@@ -8,7 +8,12 @@
       type="text"
       placeholder="Find your pokemon"
     />
-    <button class="browser__btn" @click="search">Consult</button>
+    <div class="browser__btn--group">
+      <button class="browser__btn" @click="search">Consult</button>
+      <button class="browser__btn btn-recharge" @click="recharge">
+        Recharge
+      </button>
+    </div>
   </section>
 </template>
 
@@ -23,6 +28,9 @@ export default {
     search() {
       let keyLower = this.key.toLowerCase()
       this.$emit('search-pokemon', keyLower)
+    },
+    recharge() {
+      this.$emit('search-pokemon', '')
     },
   },
 }
@@ -61,6 +69,7 @@ export default {
     width: 8rem;
     height: 3rem;
     border-radius: 10px;
+    margin: 0 1rem;
     background-color: #d5082d;
     color: white;
     font-size: 1.2rem;
@@ -71,10 +80,20 @@ export default {
     &:hover {
       background-color: #d34761;
     }
+    &--group {
+      display: flex;
+    }
     @media screen and (min-width: 768px) {
       height: 4rem;
       width: 10rem;
     }
+  }
+}
+
+.btn-recharge {
+  background-color: #348ac7;
+  &:hover {
+    background-color: #6bafe0;
   }
 }
 </style>
