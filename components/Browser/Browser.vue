@@ -50,7 +50,7 @@ export default {
   //   hsl(239, 47%, 80%)
   // );
   // background: linear-gradient(to right, #e53935, #e35d5b);
-  background: linear-gradient(to right, #757f9a, #d7dde8);
+  background: linear-gradient(to top, #fff, #6a86e0);
   height: 70vh;
   width: 100%;
   &__title {
