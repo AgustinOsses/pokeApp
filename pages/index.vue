@@ -68,7 +68,6 @@ export default {
       data.forEach((res) => {
         axios.get(res.url).then((response) => {
           this.pokemonList.push(response.data)
-          console.log(response.data)
         })
       })
     },
@@ -89,6 +88,7 @@ export default {
   justify-content: center;
   background-color: #fefefe;
   width: 100%;
+  margin-top: 2rem;
   @media screen and (min-width: 768px) {
     justify-content: space-around;
   }

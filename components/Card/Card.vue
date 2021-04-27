@@ -5,37 +5,39 @@
       :src="pokemon.sprites.other.dream_world.front_default"
       :alt="pokemon.name"
     />
-    <div class="card__description-wrapper">
-      <h3 class="card__number">N°{{ pokemon.id }}</h3>
-      <h2 class="card__name">{{ pokemon.name }}</h2>
 
-      <div class="wrapper-info">
-        <div class="card__experience">
-          <span>{{ pokemon.base_experience }}</span>
-          <h6>Experiencia base</h6>
-          <span>{{ pokemon.weight }}</span>
-          <h6>Peso</h6>
+    <h1 class="card__title">
+      {{ pokemon.name.toUpperCase() }}
+    </h1>
+    <p class="card__experience">
+      Exp. base <b>{{ pokemon.base_experience }} </b>
+    </p>
+    <div class="card__wrapper-details">
+      <div class="container">
+        <div
+          class="card__type-wrapper"
+          v-for="type in pokemon.types"
+          :key="type.slot"
+        >
+          <span class="card__type">{{ type.type.name }}</span>
         </div>
-        <div class="card__data">
-          <span>{{ pokemon.height }}</span>
-          <h6>Altura</h6>
-          <span>{{ pokemon.weight }}</span>
-          <h6>Peso</h6>
-        </div>
+        <span class="subtitle">Tipo</span>
       </div>
-      <div class="container-ability">
-        <div class="card__badge-wrapper">
-          <div v-for="type in pokemon.types" :key="type.slot">
-            <span class="card__badge"> {{ type.type.name }}</span>
-          </div>
-          <span>Tipo</span>
-        </div>
-        <div class="card__badge-wrapper">
-          <div v-for="ability in pokemon.abilities" :key="ability.slot">
-            <span class="card__badge"> {{ ability.ability.name }}</span>
-          </div>
-          <span>Habilidades</span>
-        </div>
+      <div class="card__weight-wrapper container">
+        <span class="card__weight">{{ pokemon.weight }}Kg.</span>
+        <span class="subtitle">Peso</span>
+      </div>
+      <div class="card__height-wrapper container">
+        <span class="card__height">{{ pokemon.height }}m.</span>
+        <span class="subtitle">Alura</span>
+      </div>
+    </div>
+    <div class="card__abilities">
+      <span class="card__abilities--title"><b> Habilidades</b></span>
+      <div v-for="ability in pokemon.abilities" :key="ability.slot">
+        <ul>
+          <li class="card__abilities--item">{{ ability.ability.name }}</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -56,87 +58,74 @@ export default {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 1rem 0;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+  align-items: center;
   width: 20rem;
-  height: 40rem;
-  margin: 1.5rem;
+  height: 32rem;
+  margin: 1rem 0;
+  box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+
   &__image {
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
     overflow: hidden;
-    padding: 1rem;
+    width: 100%;
     min-height: 15rem;
     height: 15rem;
+    border-radius: 10px 10px 0 0;
   }
-  &__description-wrapper {
+  &__title {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    // padding-left: 2rem;
+    width: 70%;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 5px solid #9ce89d;
   }
   &__experience {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  &__data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 5rem;
-    flex: 1 0 0;
-  }
-  &__number {
     color: gray;
-    font-family: Roboto;
   }
-  &__name {
-    font-family: Roboto;
-    color: black;
-    &::first-letter {
-      text-transform: uppercase;
+  &__wrapper-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: 4rem;
+    margin: 1rem 0;
+    box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+    padding: 0.5rem 0;
+    background-color: #96e6a1;
+    border-radius: 10px;
+  }
+  &__abilities {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #d4fc79;
+    flex-wrap: wrap;
+    box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    width: 90%;
+    padding: 0.5rem 0;
+    &--title,
+    &--item {
+      list-style: none;
+      font-size: 0.8rem;
     }
   }
-  &__badge-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: grow;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-  }
-  &__badge {
-    font-family: Roboto;
-    font-size: 0.8rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0.5rem 1rem 0;
-    background-color: #4592c4;
-    border-radius: 15px;
-    width: 5rem;
-    height: 1.2rem;
-  }
 }
 
-.wrapper-info {
+.container {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: left;
+  height: 3rem;
 }
-
-.container-ability {
-  display: flex;
-}
-
-span {
-  color: gray;
-  font-size: 26px;
+.subtitle {
+  margin-top: 0.2rem;
+  font-weight: 500;
+  color: #000000;
+  font-size: 1rem;
 }
 </style>

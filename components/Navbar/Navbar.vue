@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <nuxt-link to="/" @click="getPokemons">
+    <nuxt-link to="/">
       <img
         class="navbar__image"
         src="@/assets/images/pokemon.png"

@@ -34,7 +34,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   height: 70vh;
   width: 100%;
   &__title {

@@ -10,5 +10,8 @@
   margin: 0;
   padding: 0;
   font-family: Roboto;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 </style>
