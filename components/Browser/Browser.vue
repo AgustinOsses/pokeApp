@@ -44,12 +44,13 @@ export default {
   justify-content: space-evenly;
   align-items: center;
   // background: linear-gradient(to right, #76b852, #8dc26f);
-  background: linear-gradient(
-    to right,
-    hsl(203, 100%, 60%),
-    hsl(239, 47%, 80%)
-  );
+  // background: linear-gradient(
+  //   to right,
+  //   #33b1ff,
+  //   hsl(239, 47%, 80%)
+  // );
   // background: linear-gradient(to right, #e53935, #e35d5b);
+  background: linear-gradient(to right, #757f9a, #d7dde8);
   height: 70vh;
   width: 100%;
   &__title {

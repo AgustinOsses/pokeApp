@@ -1,12 +1,14 @@
 <template>
-  <section class="emty-state">
-    <img
-      class="emty-state__iamge"
-      src="@/assets/images/pokebola-abierta.svg"
-      alt="Pokebola"
-    />
-    <h1 class="emty-state__title">Pokemon no encontrado</h1>
-  </section>
+  <div class="emty-state">
+    <div class="emty-state__wrapper">
+      <img
+        class="emty-state__img"
+        src="@/assets/images/psyduck530.png"
+        alt=""
+      />
+    </div>
+    <h2>Pokemon not found</h2>
+  </div>
 </template>
 
 <script>
@@ -15,13 +17,15 @@ export default {}
 
 <style lang="scss" scoped>
 .emty-state {
-  &__image {
-    width: 10rem;
-    height: 10rem;
-    filter: grayscale(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__wrapper {
+    width: 20rem;
   }
-  &__title {
-    font-family: Roboto;
+  &__img {
+    width: 100%;
   }
 }
 </style>
