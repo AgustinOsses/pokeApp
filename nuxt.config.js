@@ -44,7 +44,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  loadingIndicator: {
+  loading: {
+    loading: true,
     name: 'circle',
     color: '#3B8070',
     background: 'white'

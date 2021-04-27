@@ -2,7 +2,7 @@
   <section class="emty-state">
     <img
       class="emty-state__iamge"
-      src="@/assets/images/pokebola.svg"
+      src="@/assets/images/pokebola-abierta.svg"
       alt="Pokebola"
     />
     <h1 class="emty-state__title">Pokemon no encontrado</h1>
@@ -18,6 +18,7 @@ export default {}
   &__image {
     width: 10rem;
     height: 10rem;
+    filter: grayscale(100%);
   }
   &__title {
     font-family: Roboto;
