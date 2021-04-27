@@ -20,11 +20,10 @@ export default {}
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 7rem;
-  background-color: #db092b;
+  height: 5rem;
+  background-color: #fd0004;
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
-    height: 5rem;
   }
   &__image {
     width: 10rem;

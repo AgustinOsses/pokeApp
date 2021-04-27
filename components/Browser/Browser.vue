@@ -67,7 +67,7 @@ export default {
     height: 3rem;
     border-radius: 10px;
     margin: 0 1rem;
-    background-color: #d5082d;
+    background-color: #fd0004;
     color: white;
     font-size: 1.2rem;
     outline: none;
@@ -75,7 +75,7 @@ export default {
     box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     &:hover {
-      background-color: #d34761;
+      background-color: #ff3336;
     }
     &--group {
       display: flex;
