@@ -18,13 +18,12 @@
 </template>
 
 <script>
-import env from '../api/pokeapi.js'
+import pokeApi from '../api/pokeapi.js'
 import axios from 'axios'
 export default {
   data() {
     return {
       pokemonList: [],
-      prueba: false,
     }
   },
 
@@ -35,7 +34,7 @@ export default {
   methods: {
     showMore() {
       axios
-        .get(`${env.endPoint}?limit=10&offset=${this.pokemonList.length}`)
+        .get(`${pokeApi.endPoint}?limit=10&offset=${this.pokemonList.length}`)
         .then((resolve) => {
           let data = resolve.data.results
           data.forEach((res) => {
@@ -50,7 +49,7 @@ export default {
       this.pokemonList = []
       if (value) {
         axios
-          .get(`${env.endPoint}${value}`)
+          .get(`${pokeApi.endPoint}${value}`)
           .then((result) => {
             this.pokemonList.push(result.data)
           })
@@ -63,7 +62,7 @@ export default {
     },
 
     async getPokemons() {
-      let api = await axios.get(`${env.endPoint}`)
+      let api = await axios.get(`${pokeApi.endPoint}`)
       let data = api.data.results
       data.forEach((res) => {
         axios.get(res.url).then((response) => {
@@ -105,7 +104,7 @@ export default {
   width: 8rem;
   height: 3rem;
   border-radius: 10px;
-  background-color: #d5082d;
+  background-color: #2563eb;
   color: white;
   margin: 2rem 0;
   font-size: 1.2rem;
@@ -114,7 +113,7 @@ export default {
   box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   &:hover {
-    background-color: #d34761;
+    background-color: #2d8dd2;
   }
 }
 </style>

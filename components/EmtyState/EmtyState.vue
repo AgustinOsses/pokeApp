@@ -1,5 +1,5 @@
 <template>
-  <div class="emty-state">
+  <section class="emty-state">
     <div class="emty-state__wrapper">
       <img
         class="emty-state__img"
@@ -8,7 +8,7 @@
       />
     </div>
     <h2>Pokemon not found</h2>
-  </div>
+  </section>
 </template>
 
 <script>
