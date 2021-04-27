@@ -139,7 +139,7 @@ export default {
       list-style: none;
       font-size: 0.8rem;
       padding: 0.1rem 0.5rem;
-      box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
+      box-shadow: 1px 1px 5px -3px rgba(0, 0, 0, 0.75);
     }
   }
 }
