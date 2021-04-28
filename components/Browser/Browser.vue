@@ -10,16 +10,26 @@
       placeholder="Find your pokemon"
     />
     <div class="browser__btn-group">
-      <button class="browser__btn btn-recharge" @click="recharge">
+      <button
+        v-if="pokemonArray.length <= 1"
+        class="browser__btn btn-recharge"
+        @click="recharge"
+      >
         Recharge
       </button>
-      <button class="browser__btn" @click="search">Consult</button>
+      <button v-else class="browser__btn" @click="search">Consult</button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
+  props: {
+    pokemonArray: {
+      type: Array,
+      default: null,
+    },
+  },
   data() {
     return {
       key: '',

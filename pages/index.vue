@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <browser @search-pokemon="getSearch" />
+    <browser @search-pokemon="getSearch" :pokemonArray="pokemonList" />
     <div class="card-wrapper">
       <div v-for="pokemon in pokemonList" :key="pokemon.id">
         <card :pokemon="pokemon" />
