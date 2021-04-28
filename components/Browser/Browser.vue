@@ -9,7 +9,7 @@
       type="text"
       placeholder="Find your pokemon"
     />
-    <div class="browser__btn--group">
+    <div class="browser__btn-group">
       <button class="browser__btn btn-recharge" @click="recharge">
         Recharge
       </button>
@@ -42,25 +42,33 @@ export default {
 .browser {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   background: linear-gradient(to top, #fff, #6a86e0);
-  height: 70vh;
+  height: 60vh;
   width: 100%;
   &__logo {
     width: 20rem;
+    max-height: 20rem;
     @media screen and (min-width: 768px) {
       width: 40rem;
     }
   }
   &__input {
     width: 70%;
-    height: 4rem;
+    min-height: 3rem;
     padding-left: 1rem;
-    font-size: 1rem;
     border-radius: 10px;
     outline: none;
     border: none;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+  }
+  &__btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 21rem;
   }
   &__btn {
     width: 8rem;
@@ -77,11 +85,9 @@ export default {
     &:hover {
       background-color: #ff3336;
     }
-    &--group {
-      display: flex;
-    }
+
     @media screen and (min-width: 768px) {
-      height: 4rem;
+      height: 3rem;
       width: 10rem;
     }
   }
