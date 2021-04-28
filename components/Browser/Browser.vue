@@ -1,6 +1,6 @@
 <template>
   <section class="browser">
-    <img class="browser__logo" src="@/assets/images/logo.png" />
+    <img class="browser__logo" src="@/assets/images/pokedex-logo.png" />
 
     <input
       v-model.trim="key"
@@ -43,8 +43,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   background: linear-gradient(to top, #fff, #6a86e0);
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   &__logo {
     width: 20rem;
@@ -66,20 +67,18 @@ export default {
   }
   &__btn-group {
     display: flex;
-    justify-content: space-between;
     margin-top: 2rem;
-    width: 21rem;
   }
   &__btn {
     width: 8rem;
     height: 3rem;
     border-radius: 10px;
-    margin: 0 1rem;
     background-color: #fd0004;
     color: white;
     font-size: 1.2rem;
     outline: none;
     border: none;
+    margin: 0 0.3rem;
     box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     &:hover {
