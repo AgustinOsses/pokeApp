@@ -43,12 +43,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   background: linear-gradient(to top, #fff, #6a86e0);
   height: 70vh;
   width: 100%;
   &__logo {
-    width: 20rem;
+    width: 70%;
     max-height: 20rem;
     @media screen and (min-width: 768px) {
       width: 40rem;
@@ -61,13 +61,19 @@ export default {
     border-radius: 10px;
     outline: none;
     border: none;
+    margin: 3rem 0;
     @media screen and (min-width: 768px) {
       width: 50%;
     }
   }
   &__btn-group {
     display: flex;
-    margin-top: 2rem;
+    justify-content: space-between;
+    width: 75%;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      justify-content: center;
+    }
   }
   &__btn {
     width: 8rem;
@@ -78,7 +84,6 @@ export default {
     font-size: 1.2rem;
     outline: none;
     border: none;
-    margin: 0 0.3rem;
     box-shadow: 1px 4px 10px -3px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     &:hover {
@@ -94,6 +99,7 @@ export default {
 
 .btn-recharge {
   background-color: #2563eb;
+  margin-right: 1rem;
   &:hover {
     background-color: #2d8dd2;
   }
