@@ -7,7 +7,7 @@
       @keydown.enter="search"
       class="browser__input"
       type="text"
-      placeholder="Find your pokemon"
+      placeholder="Find your pokemon with name or number"
     />
     <div class="browser__btn-group">
       <button
@@ -15,7 +15,7 @@
         class="browser__btn btn-recharge"
         @click="recharge"
       >
-        Recharge
+        Reload
       </button>
       <button class="browser__btn" @click="search">Consult</button>
     </div>
@@ -72,6 +72,7 @@ export default {
     outline: none;
     border: none;
     margin: 3rem 0;
+
     @media screen and (min-width: 768px) {
       width: 50%;
     }
