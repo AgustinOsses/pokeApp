@@ -17,7 +17,7 @@
       >
         Recharge
       </button>
-      <button v-else class="browser__btn" @click="search">Consult</button>
+      <button class="browser__btn" @click="search">Consult</button>
     </div>
   </section>
 </template>
@@ -78,7 +78,7 @@ export default {
   }
   &__btn-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 75%;
     @media screen and (min-width: 768px) {
       width: 50%;
